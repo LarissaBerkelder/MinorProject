@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCUBA_FINAL.Views.EmergencyPage"
+             BackgroundImageSource="BackgroundSea.jpg"
+             >
+
+    <Grid RowDefinitions="*,Auto"
+          Padding="0">
+
+        <Frame Grid.Row="0"
+               BackgroundColor="Transparent"
+               VerticalOptions="FillAndExpand"
+               BorderColor="Transparent">
+
+            <CollectionView ItemsSource="{Binding MessagesList}"
+                            Grid.Column="0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*" >
+                            <Frame Grid.Column="{Binding ColumnPosition}"
+                                   HorizontalOptions="{Binding HorizontalPostion}"
+                                   VerticalOptions="Center"
+                                   CornerRadius="20"
+                                   BorderColor="Transparent"
+                                   BackgroundColor="{Binding messageColor}">
+                                <Label
+                                    Text="{Binding Message}"
+                                    TextColor="Black"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="StartAndExpand"
+                                    BackgroundColor="{Binding messageColor}"/>
+                            </Frame>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+        </Frame>
+
+        <Frame Grid.Row="1"
+
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               BorderColor="#EFEFEF"
+               Padding="10"
+               CornerRadius="30"
+               Margin="10,0,10,20">
+
+            <Grid ColumnDefinitions="*,30"
+                  HeightRequest="60">
+
+                <Editor Grid.Column="0"
+                        Text="{Binding EditorText}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        Margin="20,0,20,0"/>
+
+                <ImageButton Grid.Column="1"
+                             Source="SendIcon"
+                             HeightRequest="30"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center"
+                             BackgroundColor="Transparent"
+                             Command="{Binding SendCommand}"/>
+
+            </Grid>
+
+        </Frame>
+
+
+
+    </Grid>
+
+
+
+</ContentPage>

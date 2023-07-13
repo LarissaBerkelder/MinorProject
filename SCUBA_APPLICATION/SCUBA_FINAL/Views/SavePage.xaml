@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCUBA_FINAL.Views.SavePage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundImageSource="BackgroundSea.jpg">
+
+    <Grid RowDefinitions="*,400,*">
+        <Frame Grid.Row="1"
+               Margin="20,0,20,0"
+               CornerRadius="20"
+               BackgroundColor="White">
+
+            <Grid RowDefinitions="60,*,80">
+
+                <Label Grid.Row="0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Text="Email dive data"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+
+                <Frame Grid.Row="1"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"
+                       BackgroundColor="Transparent">
+
+                    <Grid RowDefinitions="*,50,50,*">
+
+                        <Editor Grid.Row="1"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                Margin="20,0,20,0"
+                                Text="{Binding Subject}"
+                                Placeholder="Enter subject" />
+
+                        <Editor Grid.Row="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                Margin="20,0,20,0"
+                                Text="{Binding Recipient}"
+                                Placeholder="Enter additional recipient" />
+                    </Grid>
+
+                </Frame>
+
+                <Button Grid.Row="2"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Start"
+                        Margin="30,0,30,0"
+                        Command="{Binding SendCommand}"
+                        CornerRadius="30"
+                        BackgroundColor="#baae9b"
+                        Text="Send"
+                        TextColor="Black"
+                        FontSize="15"
+                        FontAttributes="Bold"/>
+            </Grid>
+
+        </Frame>
+    </Grid>
+
+</ContentPage>

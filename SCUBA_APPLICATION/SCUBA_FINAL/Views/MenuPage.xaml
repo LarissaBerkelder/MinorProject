@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCUBA_FINAL.Views.MenuPage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundImageSource="BackgroundSea.jpg">
+
+    <Grid RowDefinitions="*,400,*">
+
+        <Frame Grid.Row="1"
+               Margin="20,0,20,0"
+               CornerRadius="20"
+               BackgroundColor="White"
+               IsVisible="{Binding EmergencyFrame}">
+            <Grid RowDefinitions="100,*,100">
+                <Label Grid.Row="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Text="{Binding EmergencyMessage}"
+                       FontSize="35"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Button Grid.Row="2"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        CornerRadius="50"
+                        BackgroundColor="#F8F8F8"
+                        Text="Ok"
+                        Command="{Binding OkCommand}"/>
+            </Grid>
+        </Frame>
+
+        <Frame Grid.Row="1"
+               Margin="20,0,20,0"
+               CornerRadius="20"
+               BackgroundColor="White"
+               IsVisible="{Binding MenuFrame}">
+
+            <Grid RowDefinitions="60,*">
+                <Label Grid.Row="0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Text="Menu"
+                       TextColor="Black"
+                       FontSize="35"/>
+
+                <Grid Grid.Row="1"
+                      RowDefinitions="*,*"
+                      ColumnDefinitions="*,*"
+                      Margin="20,40,20,40">
+
+                    <Frame Grid.Row="0"
+                           Grid.Column="0"
+                           BackgroundColor="#688a8e"
+                           CornerRadius="30"
+                           Padding="5">
+
+                        <Grid RowDefinitions="20,*,10">
+                            <Label Grid.Row="0"
+                                   Margin="0,0,20,0"
+                                   Text="{Binding NotificationMSG}"
+                                   TextColor="Black"
+                                   FontSize="18"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"/>
+                            <ImageButton Grid.Row="1"
+                                         Source="messageIcon.png"
+                                         Scale="1.2"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         BackgroundColor="Transparent"
+                                         Command="{Binding ChatCommand}"/>
+                        </Grid>
+
+                    </Frame>
+
+                    <Frame Grid.Row="0"
+                           Grid.Column="1"
+                           BackgroundColor="#BBC9CB"
+                           CornerRadius="30"
+                           Padding="5">
+
+                        <Grid RowDefinitions="20,*,10">
+                            <Label Grid.Row="0"
+                                   Margin="0,0,20,0"
+                                   Text="{Binding NotificationEMR}"
+                                   FontSize="18"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"/>
+                            <ImageButton Grid.Row="1"
+                                         Source="emergencyIcon.png"
+                                         Scale="1.2"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         BackgroundColor="Transparent"
+                                         Command="{Binding EmergencyCommand}"/>
+                        </Grid>
+
+                    </Frame>
+
+                    <Frame Grid.Row="1"
+                           Grid.Column="0"
+                           BackgroundColor="#c8bfb1"
+                           CornerRadius="30"
+                           Padding="5">
+
+                        <Grid>
+                            <ImageButton Scale="1.2"
+                                         Grid.Row="0"
+                                         Source="locationIcon.png"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         BackgroundColor="Transparent"
+                                         Command="{Binding MapCommand}"/>
+                        </Grid>
+
+                    </Frame>
+
+                    <Frame Grid.Row="1"
+                           Grid.Column="1"
+                           BackgroundColor="#baae9b"
+                           CornerRadius="30"
+                           Padding="5">
+
+                        <Grid>
+                            <ImageButton Scale="1.2"
+                                         Grid.Row="0"
+                                         Source="saveIcon.png"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         BackgroundColor="Transparent"
+                                         Command="{Binding DownloadCommand}"/>
+                        </Grid>
+
+                    </Frame>
+
+                </Grid>
+
+
+            </Grid>
+
+        </Frame>
+    </Grid>
+
+</ContentPage>

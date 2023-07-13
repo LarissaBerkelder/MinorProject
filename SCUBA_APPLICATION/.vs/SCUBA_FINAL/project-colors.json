@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7e32d503-e42c-4d3b-bd7c-f55210143546": {
+      "ProjectGuid": "7e32d503-e42c-4d3b-bd7c-f55210143546",
+      "DisplayName": "SCUBA_FINAL",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "a9f93ccf-9050-4a09-9ae7-c4a3b908d67d": {
+      "ProjectGuid": "a9f93ccf-9050-4a09-9ae7-c4a3b908d67d",
+      "DisplayName": "SCUBA_FINAL.Android",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

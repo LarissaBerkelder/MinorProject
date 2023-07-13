@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCUBA_FINAL.Views.ConnectBluetoothPage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundImageSource="BackgroundSea.jpg">
+
+
+    <Grid RowDefinitions="*,400,*">
+        <Frame Grid.Row="1"
+               Margin="20,0,20,0"
+               CornerRadius="20"
+               BackgroundColor="White">
+
+            <Grid RowDefinitions="*,*,*">
+
+                <Label Text="Connecting to device..."
+                       TextColor="Black"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,0"
+                       IsVisible="True"/>
+
+                <ActivityIndicator Grid.Row="1"
+                                   IsRunning="True"
+                                   Color="Black"
+                                   VerticalOptions="Fill"
+                                   HorizontalOptions="Fill"
+                                   IsVisible="True"/>
+            </Grid>
+
+        </Frame>
+    </Grid>
+
+</ContentPage>
